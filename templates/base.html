@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock title %} :)
+    </title>
+</head>
+<body {% block body_style %}{% endblock body_style %}>
+    {% block body %} {% endblock body %}
+
+    {% block footer %} {% endblock footer %}
+</body>
+</html>

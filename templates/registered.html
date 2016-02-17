@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body_style %}
+    bgcolor='red'
+{% endblock body_style %}
+{% block body %}
+    <h2><marquee behavior='alternate'>Thank you for registering</marquee></h2>
+
+    <marquee behavior='slide', scrollamount='30'>
+        Name = {{ user }} <br />
+        Number = {{ number }}
+    </marquee>
+{% endblock body %}

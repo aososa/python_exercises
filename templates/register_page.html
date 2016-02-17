@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1 style="color:red">{{ error }}</h1>
+    <form method="post" action="{{ url_for('register') }}">
+                  <label for="name">Please enter your name:</label>
+                  <input type="text" name="name" /><br />
+                  <label for="number">Please enter your favorite number:</label>
+                  <input type="text" name="number" /><br />
+                  <input type="submit" />
+    </form>
+{% endblock body %}
