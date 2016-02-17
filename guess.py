@@ -20,13 +20,13 @@ def guess(name, answer):
 #@app.route('/register/<name>/<int:number>')
 def register():
     name = request.form.get('name')
-    number = int(request.form.get('number'))
+    number = request.form.get('number')
     if not name or not number:
         return render_template('register_page.html', error='Please enter your name and number!')
     #session = {'logged': True, 'user': name, 'number': number } # Why doesn't this work? XD
     session['logged'] = True
     session['user'] = name
-    session['number'] = number
+    session['number'] = int(number)
     return render_template(
         'registered.html',
         user=name,
