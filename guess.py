@@ -9,7 +9,7 @@ def hello():
 
 @app.route('/guessmynumber/<name>/<int:answer>')
 def guess(name, answer):
-    correct = (answer == session['number'])
+    correct = (answer == session.get('number'))
 
     return render_template(
         'guess.html',
@@ -20,7 +20,7 @@ def guess(name, answer):
 #@app.route('/register/<name>/<int:number>')
 def register():
     name = request.form.get('name')
-    number = request.form.get('number')
+    number = int(request.form.get('number'))
     if not name or not number:
         return render_template('register_page.html', error='Please enter your name and number!')
     #session = {'logged': True, 'user': name, 'number': number } # Why doesn't this work? XD
